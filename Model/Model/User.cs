@@ -9,12 +9,11 @@ namespace Model
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public IEnumerable<User> UserList { get; set; }
+        public string LastName { get; set; }        
 
-        public User()
+        public IEnumerable<User> FindAll()
         {
-            List<User> ul = new List<User>();
+            List<User> ul = new List<User>();            
             ul.Add(new User(ID = 1, FirstName = "John", LastName = "Brown"));
             ul.Add(new User(ID = 2, FirstName = "Jane", LastName = "Brown"));
             ul.Add(new User(ID = 3, FirstName = "Franz", LastName = "Crosbourne"));
@@ -23,7 +22,10 @@ namespace Model
             ul.Add(new User(ID = 6, FirstName = "Yacira", LastName = "Francis"));
             ul.Add(new User(ID = 7, FirstName = "Natalia", LastName = "Francis"));
             ul.Add(new User(ID = 8, FirstName = "Jack", LastName = "Reacher"));
-            this.UserList = ul;
+            return ul;
+        }
+        public User()
+        {            
         }
 
         public User(int id, string firstName, string lastName)

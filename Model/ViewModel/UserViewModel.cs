@@ -24,7 +24,7 @@ namespace ViewModel
         public UserViewModel()
         {
             User us = new User(); //Get the data loaded
-            this.users = us.UserList;
+            this.users = us.FindAll();
         }
         private void OnPropertyChanged(string propertyName)
         {

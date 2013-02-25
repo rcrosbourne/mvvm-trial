@@ -14,8 +14,8 @@ namespace ModelTest
         public void TestUserListCreation()
         {
             User us = new User();
-            Assert.IsTrue(us.UserList.Count<User>() > 0);
-            var entry = from user in us.UserList
+            Assert.IsTrue(us.FindAll().Count<User>() > 0);
+            var entry = from user in us.FindAll()
                          where user.ID == 1
                          select user;
             Assert.IsNotNull(entry);
